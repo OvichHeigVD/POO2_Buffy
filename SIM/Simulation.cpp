@@ -24,7 +24,7 @@ void Simulation::run() {
         if(field.humansRemaining() > 0)
             numberOfBuffySuccess++;
     }
-    this->result = (numberOfBuffySuccess / repetitions);
+    this->result = (numberOfBuffySuccess / repetitions) * 100;
 }
 
 double Simulation::getResult() const {

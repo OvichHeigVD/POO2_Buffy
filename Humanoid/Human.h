@@ -12,7 +12,11 @@ public:
     void executeAction(Field& where) override;
     std::string toString() const override;
     bool isHuman() const override;
+    void transform();
+    bool isTranform() const;
     ~Human() override = default;
+private:
+    bool toBeTransformed;
 };
 
 

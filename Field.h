@@ -24,10 +24,10 @@ public:
 
     int getWidth() const;
     int getHeight() const;
-    Position createPosition() const;
+
 
     virtual int nextTurn();
-    virtual void addVampire(Vampire* vampire);
+
 
     Iterator begin();
     Iterator end();
@@ -44,7 +44,9 @@ public:
 
 protected:
     std::list<Humanoid*> humanoids;
-
+private:
+    Position createPosition() const;
+    void addVampire(Vampire* vampire);
 private:
     int turn;
     const int width, height;

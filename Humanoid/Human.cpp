@@ -5,7 +5,7 @@
 #include "Human.h"
 #include "../Action/Move.h"
 
-Human::Human(Position position) : Humanoid(position, 1) {
+Human::Human(Position position) : Humanoid(position, 1), toBeTransformed(false) {
 }
 
 void Human::setAction(const Field& field) {
@@ -24,4 +24,13 @@ bool Human::isHuman() const {
 
 std::string Human::toString() const {
     return "h";
+}
+
+bool Human::isTranform() const {
+    return this->toBeTransformed;
+}
+
+void Human::transform() {
+    this->toBeTransformed = true;
+    this->kill();
 }

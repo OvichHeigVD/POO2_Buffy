@@ -6,6 +6,8 @@
 int main() {
 
     Display* fieldDisplay = new Display(50, 50, 20, 10);
+   fieldDisplay->run();
+
     Field* field = new Field(50, 50, 20, 10);
 
     Simulation* sim = new Simulation(fieldDisplay, 10000);
@@ -15,6 +17,6 @@ int main() {
     Simulation* sim3 = new Simulation(field, 10000);
     std::cout << "Buffy Success Rate : " << sim3->getResult() << std::endl;
 
-    fieldDisplay->run();
-    return 0;
+
+    return EXIT_SUCCESS;
 }

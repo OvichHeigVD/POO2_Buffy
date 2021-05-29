@@ -32,9 +32,18 @@ int Field::nextTurn()
 // Enlever les humanoides tués
     for (Iterator it = humanoids.begin(); it != humanoids.end(); ){
         if (!(*it)->isAlive()) {
-            // buffy is never killed anyway, no find Buffy method
-            (*it)->isHuman() ? this->remainingHumans-- : this->remainingVampires--;
             Humanoid* toDelete = *it;
+            // buffy is never killed anyway, no find Buffy method
+            if(toDelete->isHuman()){
+                this->remainingHumans--;
+                Human* human = dynamic_cast<Human*>(toDelete);
+                if(human->isTranform())
+                   this->addVampire(new Vampire(human));
+
+            } else{
+                this->remainingVampires--;
+            }
+
             it = humanoids.erase(it); // suppression de l’élément dans la liste
             delete toDelete; // destruction de l’humanoide référencé
         }else{

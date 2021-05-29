@@ -54,7 +54,6 @@ void Display::clear() {
             screen[y][x] = nullptr;
 }
 
-
 bool Display::isRunning() const {
     return this->running;
 }
@@ -70,7 +69,6 @@ void Display::run() {
         if(goNext) tour = this->nextTurn();
         std::cout << "[" << tour << "] q>uit s>tatistics n>ext:";
         switch(std::cin.peek()){
-
             case 'q':
                 this->stop();
                 break;
@@ -89,7 +87,7 @@ void Display::run() {
                 std::cout << "}" << std::endl;
                 std::cout << "Simulation running..." << std::endl;
                 Simulation sim(this, 10000);
-                std::cout << "Buffy Success Rate : " << sim.getResult() << std::endl;
+                std::cout << "Buffy Success Rate : " << sim.getResult() << "%" << std::endl;
                 goNext = false;
                 break;
             }
