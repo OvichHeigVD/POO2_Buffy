@@ -3,7 +3,7 @@
  * @date 1er juin 2021
  *
  * @file Utils.h
- * @brief
+ * @brief Méthode mettant à disposition des méthodes utilitaires
  */
 
 #ifndef LABO04_UTILS_H
@@ -31,8 +31,8 @@ public:
 
 private:
     /**
-     *
-     * @return
+     * Getter de Seed
+     * @return un seed
      */
     static unsigned getSeed();
 

@@ -12,12 +12,12 @@
 Move::Move(Humanoid* humanoid, const Field* field, Movement::Direction direction) :
     Action(humanoid) {
 
-    // calcule l'offset x, y du mouvement dans la direction appropriée
+    // Calcule l'offset x, y du mouvement dans la direction appropriée
     Offset offset = Movement::getOffset(direction);
     int offsetX = offset.getX() * this->subject->getSteps();
     int offsetY = offset.getY() * this->subject->getSteps();
 
-    // vérification des limites du Field après avoir appliqué l'offset
+    // Vérification des limites du Field après avoir appliqué l'offset
     Position initialPosition = this->subject->getPosition();
 
     if(initialPosition.getX() + offsetX < 1)         offsetX = 0;

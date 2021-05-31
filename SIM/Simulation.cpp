@@ -21,17 +21,20 @@ void Simulation::run() {
     double numberOfBuffySuccess = 0;
     int repeat = repetitions;
 
+    // Tant qu'on a pas fini la simulation
     while(repeat-- > 0){
         Field field = Field(width, height, numberOfHumans, numberOfVampires);
         while(field.vampiresRemaining() > 0)
             field.nextTurn();
+        // S'il reste au moins un humain, 1 succès de plus pour Buffy
         if(field.humansRemaining() > 0)
             numberOfBuffySuccess++;
     }
+
+    // Rapport succès sur le nombre total de simulation
     this->result = (numberOfBuffySuccess / repetitions) * 100;
 }
 
 double Simulation::getResult() const {
     return this->result;
 }
-

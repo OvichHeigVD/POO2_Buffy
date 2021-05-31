@@ -3,7 +3,7 @@
  * @date 1er juin 2021
  *
  * @file Utils.cpp
- * @brief
+ * @brief Implémentation de la classe Utils
  */
 
 #include "Utils.h"

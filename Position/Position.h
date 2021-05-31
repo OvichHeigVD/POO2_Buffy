@@ -3,7 +3,7 @@
  * @date 1er juin 2021
  *
  * @file Position.h
- * @brief
+ * @brief Classe permettant de créer une position pour l'humanoid
  */
 
 #ifndef LABO04_POSITION_H
@@ -15,41 +15,41 @@ class Position {
 
 public:
     /**
-     *
-     * @param x
-     * @param y
+     * Constructeur de Position
+     * @param x - la coordonnée x
+     * @param y - la coordonnée y
      */
     Position(int x, int y);
 
     /**
-     *
-     * @return
+     * Getter de x
+     * @return la coordonnée x
      */
     int getX() const;
 
     /**
-     *
-     * @return
+     * Getter de y
+     * @return la coordonnée y
      */
     int getY() const;
 
     /**
-     *
-     * @param x
+     * Setter  de x
+     * @return la coordonnée x
      */
     void setX(int x);
 
     /**
-     *
-     * @param y
+     * Setter de y
+     * @return la coordonnée x
      */
     void setY(int y);
 
     /**
-     *
-     * @param from
-     * @param to
-     * @return
+     * Methode calculant la distance d'un point de départ à un point d'arrivé
+     * @param from - le point de départ
+     * @param to - le point d'arrivée
+     * @return une distance
      */
     static double distance(Position from, Position to);
 

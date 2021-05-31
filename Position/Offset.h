@@ -3,7 +3,7 @@
  * @date 1er juin 2021
  *
  * @file Offset.h
- * @brief
+ * @brief Classe Offset qui va calculer le déplacement sous forme de coordonnées
  */
 
 #ifndef LABO04_OFFSET_H
@@ -13,24 +13,23 @@ class Offset {
     int x, y;
 public:
     /**
-     *
-     * @param x
-     * @param y
+     * Constructeur d'Offset
+     * @param x - la coordonnée x
+     * @param y - la coordonnée y
      */
     Offset(int x, int y);
 
     /**
-     *
-     * @return
+     * Getter de x
+     * @return la coordonnée x
      */
     int getX() const;
 
     /**
-     *
-     * @return
+     * Getter de y
+     * @return la coordonnée y
      */
     int getY() const;
 };
-
 
 #endif //LABO04_OFFSET_H

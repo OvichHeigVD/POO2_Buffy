@@ -3,12 +3,12 @@
  * @date 1er juin 2021
  *
  * @file Offset.cpp
- * @brief
+ * @brief Implémentation de la classe Offset
  */
 
 #include "Offset.h"
 
-Offset::Offset(int x, int y)  : x(x), y(y){}
+Offset::Offset(int x, int y)  : x(x), y(y) { }
 
 int Offset::getX() const {
     return x;
