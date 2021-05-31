@@ -1,11 +1,14 @@
-//
-// Created by stefa on 25.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Utils.cpp
+ * @brief
+ */
 
-
-#include <functional>
-#include <chrono>
 #include "Utils.h"
+
+#include <chrono>
 
 std::mt19937 Utils::eng{Utils::getSeed()};
 

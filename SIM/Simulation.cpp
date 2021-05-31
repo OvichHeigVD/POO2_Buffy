@@ -1,15 +1,19 @@
-//
-// Created by stefa on 28.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Simulation.cpp
+ * @brief Implémentation de la classe Simulation
+ */
 
 #include "Simulation.h"
 
 Simulation::Simulation(const Field* field, int repetitions) :
-width(field->getWidth()),
-height(field->getHeight()),
-numberOfHumans(field->initialHumans()),
-numberOfVampires(field->initialVampires()),
-repetitions(repetitions), result(0){
+    width(field->getWidth()),
+    height(field->getHeight()),
+    numberOfHumans(field->initialHumans()),
+    numberOfVampires(field->initialVampires()),
+    repetitions(repetitions), result(0) {
     this->run();
 }
 

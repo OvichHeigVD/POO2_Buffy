@@ -1,6 +1,10 @@
-//
-// Created by stefa on 22.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Field.cpp
+ * @brief
+ */
 
 #include "Field.h"
 #include "Utils.h"
@@ -12,8 +16,7 @@ Field::Field(int width, int height, int numberOfHumans, int numberOfVampires) :
     turn(0),
     width(width), height(height),
     initialNumberOfHumans(numberOfHumans), initialNumberOfVampires(numberOfVampires),
-    remainingHumans(numberOfHumans), remainingVampires(numberOfVampires)
-    {
+    remainingHumans(numberOfHumans), remainingVampires(numberOfVampires) {
         this->humanoids.push_back(new Buffy(this->createPosition()));
         for(int i = 0; i < numberOfHumans; ++i)
             this->humanoids.push_back(new Human(this->createPosition()));
@@ -21,26 +24,24 @@ Field::Field(int width, int height, int numberOfHumans, int numberOfVampires) :
             this->humanoids.push_back(new Vampire(this->createPosition()));
 }
 
-int Field::nextTurn()
-{
-// Déterminer les prochaines actions
+size_t Field::nextTurn() {
+    // Déterminer les prochaines actions
     for (Iterator it = humanoids.begin(); it != humanoids.end(); it++)
         (*it)->setAction(*this);
-// Executer les actions
+    // Executer les actions
     for (Iterator it = humanoids.begin(); it != humanoids.end(); it++)
         (*it)->executeAction(*this);
-// Enlever les humanoides tués
-    for (Iterator it = humanoids.begin(); it != humanoids.end(); ){
+    // Enlever les humanoides tués
+    for (Iterator it = humanoids.begin(); it != humanoids.end(); ) {
         if (!(*it)->isAlive()) {
             Humanoid* toDelete = *it;
             // buffy is never killed anyway, no find Buffy method
             if(toDelete->isHuman()){
                 this->remainingHumans--;
                 Human* human = dynamic_cast<Human*>(toDelete);
-                if(human->isTranform())
+                if(human->isTransformed())
                    this->addVampire(new Vampire(human));
-
-            } else{
+            } else {
                 this->remainingVampires--;
             }
 

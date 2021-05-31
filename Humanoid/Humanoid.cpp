@@ -1,7 +1,10 @@
-//
-// Created by stefa on 22.05.2021.
-//
-
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Humanoid.cpp
+ * @brief Implementation de la classe Humanoid
+ */
 #include "Humanoid.h"
 
 Humanoid::Humanoid(Position position, size_t steps) :
@@ -9,15 +12,11 @@ Humanoid::Humanoid(Position position, size_t steps) :
     steps(steps),
     action(nullptr),
     futurePosition(nullptr),
-    alive(true) {}
+    alive(true) { }
 
-std::ostream& operator<<(std::ostream &os, const Humanoid &rhs) {
-    os << rhs.toString();
-    return os;
-}
-
-bool Humanoid::isAlive() const {
-    return this->alive;
+Humanoid::~Humanoid() {
+    delete this->futurePosition;
+    this->futurePosition = nullptr;
 }
 
 Position Humanoid::getPosition() const {
@@ -30,8 +29,12 @@ void Humanoid::setFuturePosition(int x, int y) {
 }
 
 void Humanoid::move() {
-    this->position = *this->futurePosition;
+    this->position = *this->futurePosition; // TODO : pas de delete?
     this->futurePosition = nullptr;
+}
+
+void Humanoid::kill() {
+    this->alive = false;
 }
 
 size_t Humanoid::getSteps() const {
@@ -42,15 +45,15 @@ bool Humanoid::isHuman() const {
     return false;
 }
 
-Humanoid::~Humanoid() {
-    delete this->futurePosition;
-    this->futurePosition = nullptr;
-}
-
-void Humanoid::kill() {
-    this->alive = false;
-}
-
 bool Humanoid::isBuffy() const {
     return false;
+}
+
+bool Humanoid::isAlive() const {
+    return this->alive;
+}
+
+std::ostream& operator<<(std::ostream &os, const Humanoid &rhs) {
+    os << rhs.toString();
+    return os;
 }

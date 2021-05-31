@@ -1,8 +1,11 @@
-//
-// Created by stefa on 23.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Action.cpp
+ * @brief Implémentation de la classe Action
+ */
+
 #include "Action.h"
 
-Action::Action(Humanoid *subject) : subject(subject){
-
-}
+Action::Action(Humanoid *subject) : subject(subject) { }

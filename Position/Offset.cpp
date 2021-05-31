@@ -1,6 +1,10 @@
-//
-// Created by stefa on 23.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Offset.cpp
+ * @brief
+ */
 
 #include "Offset.h"
 

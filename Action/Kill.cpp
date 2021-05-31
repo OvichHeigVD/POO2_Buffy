@@ -1,14 +1,19 @@
-//
-// Created by stefa on 24.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Kill.cpp
+ * @brief Implémentation de la classe Kill
+ */
 
 #include "Kill.h"
 #include "../Field.h"
 
-Kill::Kill(Humanoid *subject) : Action(subject) {}
+Kill::Kill(Humanoid *subject) : Action(subject) { }
 
 void Kill::execute(Field& field) {
-    if(this->subject->isAlive()){
+    // Si vivant, le tuer
+    if(this->subject->isAlive()) {
         this->subject->kill();
     }
 }

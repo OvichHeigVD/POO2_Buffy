@@ -1,8 +1,11 @@
-//
-// Created by stefa on 23.05.2021.
-//
+/**
+ * @authors Dalia Maillefer, Stefan Teofanovic
+ * @date 1er juin 2021
+ *
+ * @file Movement.cpp
+ * @brief
+ */
 
-#include <cstdlib>
 #include "../Utils.h"
 #include "Movement.h"
 
@@ -27,7 +30,6 @@ Offset Movement::getOffset(Movement::Direction direction) {
         case Movement::Direction::NONE :
         default:
             return {0,0};
-
     }
 }
 
