@@ -19,6 +19,7 @@
 #include <list>
 
 class Field {
+
 public:
     // Alias
     using List = std::list<Humanoid*>;
@@ -58,23 +59,7 @@ public:
      */
     int getHeight() const;
 
-    /**
-     * Méthode permettant d'avoir un itérateur en début de liste
-     * @return un Iterator
-     */
-    Iterator begin();
 
-    /**
-     * Méthode permettant d'avoir un itérateur en fin de liste
-     * @return un Iterator
-     */
-    Iterator end();
-
-    /**
-     * Méthode permettant d'avoir un itérateur en début de liste
-     * (pour les méthodes const)
-     * @return un ConstIterator
-     */
     ConstIterator begin() const;
 
     /**
@@ -118,9 +103,24 @@ public:
     template <typename T>
     T findClosestHumanoid(const Position& from, double& minDistance) const;
 
-protected:
-    std::list<Humanoid*> humanoids;
 private:
+    /**
+    * Méthode permettant d'avoir un itérateur en début de liste
+    * @return un Iterator
+    */
+    Iterator begin();
+
+    /**
+     * Méthode permettant d'avoir un itérateur en fin de liste
+     * @return un Iterator
+     */
+    Iterator end();
+
+    /**
+     * Méthode permettant d'avoir un itérateur en début de liste
+     * (pour les méthodes const)
+     * @return un ConstIterator
+     */
     /**
      * Méthode créant une nouvelle position pour un Humanoid
      * @return une Position de coordonnée x et y
@@ -138,6 +138,7 @@ private:
     const int width, height;
     const int initialNumberOfHumans, initialNumberOfVampires;
     int remainingHumans, remainingVampires;
+    std::list<Humanoid*> humanoids;
 };
 
 #endif //LABO04_FIELD_H

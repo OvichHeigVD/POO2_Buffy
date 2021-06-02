@@ -14,10 +14,8 @@ Transform::Transform(Human* subject) : Action(subject) { }
 void Transform::execute(Field& field) {
     // On veille à transformer un humain vivant
     if(this->subject->isAlive() && this->subject->isHuman()) {
-        Field::Iterator it = std::find(field.begin(), field.end(), this->subject);
-        if((*it)->isHuman()) {
-            Human* human = dynamic_cast<Human*>(*it);
-            human->transform();
-        }
+        Human* humain = dynamic_cast<Human*>(this->subject);
+        if(humain != nullptr && !humain->isTransformed())
+            humain->transform();
     }
 }

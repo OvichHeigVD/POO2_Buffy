@@ -19,6 +19,7 @@
 class Field;
 
 class Humanoid {
+    friend class Move;
     /**
      * Surcharge de l'opérateur de flux de sortie
      * @param os - un ostream
@@ -62,12 +63,6 @@ public:
      */
     Position getPosition() const;
 
-    /**
-     * Setter de la future position de l'humanoid
-     * @param x - la coordonnée x
-     * @param y - la coordonnée y
-     */
-    void setFuturePosition(int x, int y);
 
     /**
      * Méthode permettant d'affecter la future position à la position actuelle
@@ -109,7 +104,14 @@ public:
      * @return un caractère sous forme de string
      */
     virtual std::string toString() const = 0;
+private:
 
+    /**
+     * Setter de la future position de l'humanoid
+     * @param x - la coordonnée x
+     * @param y - la coordonnée y
+     */
+    void setFuturePosition(int x, int y);
 private:
     Position position;
     Position* futurePosition;

@@ -53,7 +53,7 @@ void Display::run() {
                 std::cout << " experience repeated 10000 times" << std::endl;
                 std::cout << "}" << std::endl;
                 std::cout << "Simulation running..." << std::endl;
-                Simulation sim(this, 1);
+                Simulation sim(this, 10000);
                 std::cout << "Buffy Success Rate : " << sim.getResult() << "%" << std::endl;
                 goNext = false;
                 break;
@@ -71,12 +71,13 @@ size_t Display::nextTurn() {
     this->clear();
 
     // Load humanoid into Display memory
-    for(Humanoid* human : this->humanoids){
-        Position position = human->getPosition();
+    for (ConstIterator it = ((const Field*) this)->begin(); it != ((const Field*) this)->end(); it++){
+        Humanoid* numanoid = *it;
+        Position position = numanoid->getPosition();
 
         Humanoid* atScreen = this->screen[position.getY() - 1][position.getX() - 1];
         if(atScreen == nullptr || !atScreen->isBuffy()){
-            this->screen[position.getY() - 1][position.getX() - 1] = human;
+            this->screen[position.getY() - 1][position.getX() - 1] = numanoid;
         }
     }
 
