@@ -20,14 +20,6 @@ int Position::getY() const {
     return y;
 }
 
-void Position::setX(int newX) {
-    this->x = newX;
-}
-
-void Position::setY(int newY) {
-    this->y = newY;
-}
-
 double Position::distance(Position from, Position to) {
     // Théorème de Pythagore
     return sqrt(pow(to.getX() - from.getX(), 2) +

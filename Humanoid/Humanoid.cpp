@@ -29,7 +29,8 @@ void Humanoid::setFuturePosition(int x, int y) {
 }
 
 void Humanoid::move() {
-    this->position = *this->futurePosition; // TODO : pas de delete?
+    this->position = *this->futurePosition;
+    delete this->futurePosition;
     this->futurePosition = nullptr;
 }
 

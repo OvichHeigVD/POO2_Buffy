@@ -44,7 +44,7 @@ public:
      */
     virtual ~Humanoid();
 
-    /**
+     /**
      * Méthode abstraite permettant d'affecter une certaine action
      * @param where - un Field
      */

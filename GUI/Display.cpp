@@ -53,7 +53,7 @@ void Display::run() {
                 std::cout << " experience repeated 10000 times" << std::endl;
                 std::cout << "}" << std::endl;
                 std::cout << "Simulation running..." << std::endl;
-                Simulation sim(this, 10000);
+                Simulation sim(this, 1);
                 std::cout << "Buffy Success Rate : " << sim.getResult() << "%" << std::endl;
                 goNext = false;
                 break;

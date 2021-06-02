@@ -43,7 +43,7 @@ public:
     bool isHuman() const override;
 
     /**
-     * Méthode permettant de transformer un humain en vamopire
+     * Méthode permettant d'indiquer que l'humain doit être transformé en vampire
      */
     void transform();
 

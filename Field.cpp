@@ -27,6 +27,7 @@ Field::Field(int width, int height, int numberOfHumans, int numberOfVampires) :
     // On crée les vampires
     for(int i = 0; i < numberOfVampires; ++i)
         this->humanoids.push_back(new Vampire(this->createPosition()));
+
 }
 
 Field::~Field() {

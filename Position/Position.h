@@ -34,18 +34,6 @@ public:
     int getY() const;
 
     /**
-     * Setter  de x
-     * @return la coordonnée x
-     */
-    void setX(int x);
-
-    /**
-     * Setter de y
-     * @return la coordonnée x
-     */
-    void setY(int y);
-
-    /**
      * Methode calculant la distance d'un point de départ à un point d'arrivé
      * @param from - le point de départ
      * @param to - le point d'arrivée
