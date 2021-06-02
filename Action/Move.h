@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Move.h
  * @brief Action Move, classe enfant de Action, permettant de déplacer un Humanoid

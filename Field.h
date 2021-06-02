@@ -1,9 +1,9 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Field.h
- * @brief Classe gérant le champ (Field)
+ * @brief Classe gérant la grille (Field)
  */
 
 #ifndef LABO04_FIELD_H
@@ -59,7 +59,11 @@ public:
      */
     int getHeight() const;
 
-
+    /**
+     * Méthode permettant d'avoir un itérateur en début de liste
+     * (pour les méthodes const)
+     * @return un ConstIterator
+     */
     ConstIterator begin() const;
 
     /**
@@ -116,11 +120,6 @@ private:
      */
     Iterator end();
 
-    /**
-     * Méthode permettant d'avoir un itérateur en début de liste
-     * (pour les méthodes const)
-     * @return un ConstIterator
-     */
     /**
      * Méthode créant une nouvelle position pour un Humanoid
      * @return une Position de coordonnée x et y

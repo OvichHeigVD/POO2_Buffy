@@ -1,9 +1,9 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Display.cpp
- * @brief
+ * @brief Implémentation de la classe Display
  */
 
 #include "Display.h"
@@ -45,16 +45,21 @@ void Display::run() {
                 break;
             case 's': {
                 std::cout << "Simulation Config : {" << std::endl;
-                std::cout << " width     : " << this->getWidth() << "," << std::endl;
-                std::cout << " height    : " << this->getHeight() << "," << std::endl;
+                std::cout << " width     : " << this->getWidth() << ","
+                << std::endl;
+                std::cout << " height    : " << this->getHeight() << ","
+                << std::endl;
                 std::cout << " buffy     : a single," << std::endl;
-                std::cout << " humans    : " << this->initialHumans() << "," << std::endl;
-                std::cout << " vampires  : " << this->initialVampires() << "," << std::endl;
+                std::cout << " humans    : " << this->initialHumans() << ","
+                << std::endl;
+                std::cout << " vampires  : " << this->initialVampires() << ","
+                << std::endl;
                 std::cout << " experience repeated 10000 times" << std::endl;
                 std::cout << "}" << std::endl;
                 std::cout << "Simulation running..." << std::endl;
                 Simulation sim(this, 10000);
-                std::cout << "Buffy Success Rate : " << sim.getResult() << "%" << std::endl;
+                std::cout << "Buffy Success Rate : " << sim.getResult() << "%"
+                << std::endl;
                 goNext = false;
                 break;
             }
@@ -71,13 +76,15 @@ size_t Display::nextTurn() {
     this->clear();
 
     // Load humanoid into Display memory
-    for (ConstIterator it = ((const Field*) this)->begin(); it != ((const Field*) this)->end(); it++){
-        Humanoid* numanoid = *it;
-        Position position = numanoid->getPosition();
+    for (ConstIterator it = ((const Field*) this)->begin();
+                        it != ((const Field*) this)->end(); it++){
+        Humanoid* humanoid = *it;
+        Position position = humanoid->getPosition();
 
-        Humanoid* atScreen = this->screen[position.getY() - 1][position.getX() - 1];
+        Humanoid* atScreen =
+                    this->screen[position.getY() - 1][position.getX() - 1];
         if(atScreen == nullptr || !atScreen->isBuffy()){
-            this->screen[position.getY() - 1][position.getX() - 1] = numanoid;
+            this->screen[position.getY() - 1][position.getX() - 1] = humanoid;
         }
     }
 
@@ -117,5 +124,6 @@ void Display::clear() {
 }
 
 void Display::drawLine() const {
-    std::cout << "+" << std::setfill('-') << std::setw (this->getWidth() + 1) << "+" << std::endl;
+    std::cout << "+" << std::setfill('-') << std::setw (this->getWidth() + 1)
+        << "+" << std::endl;
 }

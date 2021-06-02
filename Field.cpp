@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Field.cpp
  * @brief Implémentation de la classe Field
@@ -15,7 +15,8 @@ using namespace std;
 Field::Field(int width, int height, int numberOfHumans, int numberOfVampires) :
         turn(0),
         width(width), height(height),
-        initialNumberOfHumans(numberOfHumans), initialNumberOfVampires(numberOfVampires),
+        initialNumberOfHumans(numberOfHumans),
+        initialNumberOfVampires(numberOfVampires),
         remainingHumans(numberOfHumans), remainingVampires(numberOfVampires) {
     // On crée Buffy
     this->humanoids.push_back(new Buffy(this->createPosition()));
@@ -126,8 +127,10 @@ T Field::findClosestHumanoid(const Position& from, double& minDistance) const {
 }
 
 // Spécialisation explicite de la méthode template, accepte que Human* et Vampire*
-template Human*     Field::findClosestHumanoid<Human*>(const Position& from, double& minDistance) const;
-template Vampire*   Field::findClosestHumanoid<Vampire*>(const Position& from, double& minDistance) const;
+template Human*     Field::findClosestHumanoid<Human*>(const Position& from,
+        double& minDistance) const;
+template Vampire*   Field::findClosestHumanoid<Vampire*>(const Position& from,
+        double& minDistance) const;
 
 Position Field::createPosition() const {
     // Génération aléatoire d'une position mais dans les bornes de la grille

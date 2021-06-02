@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Vampire.h
  * @brief Classe Vampire, enfant d'Humanoid, permettant de représenter un vampire

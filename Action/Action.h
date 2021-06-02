@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Action.h
  * @brief Classe abstraite Action que peuvent faire les Humanoids (Se déplacer,

@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Display.h
  * @brief Classe permettant de gérer l'affichage de Field et de ses Humanoid

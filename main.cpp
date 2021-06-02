@@ -1,9 +1,9 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file main.cpp
- * @brief
+ * @brief Lancement du programme et des tests de simulations
  */
 
 #include "Field.h"
@@ -16,7 +16,7 @@
 const int MINIMUM_SIZE = 0;
 const int MINIMUM_NUMBER = 0;
 
-void simulationTest(const Display* fieldDisplay, const Field* Field);
+void simulationTest(int width, int height, int nbHumans, int nbVampires);
 
 using namespace std;
 
@@ -48,17 +48,22 @@ int main(int argc, char** argv) {
 
     delete fieldDisplay;
 
+    // Running simulation's tests
+    //simulationTest(width, height, nbHumans, nbVampires);
     return EXIT_SUCCESS;
 }
 
-void simulationTest(const Display* fieldDisplay) {
+void simulationTest(int width, int height, int nbHumans, int nbVampires) {
 
-    Field* field = new Field(50, 50, 20, 10);
-    Simulation* sim = new Simulation(fieldDisplay, 10000);
+    Field* field = new Field(width, height, nbHumans, nbVampires);
+    Simulation* sim = new Simulation(field, 10000);
     std::cout << "Buffy Success Rate : " << sim->getResult() << std::endl;
-    Simulation* sim2 = new Simulation(fieldDisplay, 10000);
+    Simulation* sim2 = new Simulation(field, 10000);
     std::cout << "Buffy Success Rate : " << sim2->getResult() << std::endl;
     Simulation* sim3 = new Simulation(field, 10000);
     std::cout << "Buffy Success Rate : " << sim3->getResult() << std::endl;
     delete field;
+    delete sim;
+    delete sim2;
+    delete sim3;
 }

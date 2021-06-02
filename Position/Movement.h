@@ -1,6 +1,6 @@
 /**
  * @authors Dalia Maillefer, Stefan Teofanovic
- * @date 1er juin 2021
+ * @date 2 juin 2021
  *
  * @file Movement.h
  * @brief Classe Mouvement qui va générer une direction à prendre pour un humanoid
